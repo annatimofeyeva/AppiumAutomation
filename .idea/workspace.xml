@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apks/org.wikipedia.apk" beforeDir="false" afterPath="$PROJECT_DIR$/apks/org.wikipedia.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,13 +35,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1600" />
+          <entry key="java" value="1708" />
           <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1600" />
+          <entry key="JAVA" value="1708" />
           <entry key="PLAIN_TEXT" value="101" />
         </counts>
       </usages-collector>
@@ -62,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="760">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1105#1106#0" expanded="true" />
@@ -157,7 +156,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543184242796" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543185350426" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -275,18 +274,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest - 2018.11.24 at 20h 27m 38s.xml">
-      <configuration name="FirstTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_firstTest - 2018.11.24 at 20h 28m 20s.xml">
-      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest - 2018.11.24 at 20h 29m 34s.xml">
-      <configuration name="FirstTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest - 2018.11.24 at 20h 32m 12s.xml">
-      <configuration name="FirstTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FirstTest - 2018.11.24 at 20h 33m 00s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
@@ -305,6 +292,18 @@
     <history-entry file="FirstTest - 2018.11.25 at 14h 13m 11s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FirstTest - 2018.11.25 at 14h 17m 16s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest - 2018.11.25 at 14h 25m 50s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest - 2018.11.25 at 14h 31m 59s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest - 2018.11.25 at 14h 33m 53s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="167" y="99" width="2040" height="1341" extended-state="0" />
@@ -319,13 +318,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.87311935" visible="true" weight="0.4699093" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.87261784" visible="true" weight="0.24237429" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49799398" weight="0.06760099" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.12688065" side_tool="true" visible="true" weight="0.4699093" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4974925" weight="0.06760099" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.12738214" side_tool="true" visible="true" weight="0.24237429" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -365,8 +364,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="760">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1105#1106#0" expanded="true" />
