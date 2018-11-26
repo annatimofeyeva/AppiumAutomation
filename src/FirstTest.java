@@ -61,6 +61,13 @@ public class FirstTest
 //                driver.findElement(By.id("org.wikipedia:id/search_src_text"));
 
         element_to_enter_search_line.sendKeys("Java");
+
+        waitForElementPresentByXpath(
+                "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']",
+                "Cannot find 'Object-oriented programming language' topic searching by Java",
+                15
+
+        );
     }
 
     private WebElement waitForElementPresentByXpath(String xpath, String error_message, long timeoutInSeconds)
