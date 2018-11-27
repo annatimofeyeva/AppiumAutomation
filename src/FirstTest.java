@@ -128,6 +128,29 @@ public class FirstTest {
         );
     }
 
+    @Test
+    public void testSearchForWordSearchInSearchInputField()
+    {
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia' in input field",
+                5
+        );
+
+        WebElement search_input_field_element = waitForElementPresent(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Search input field is not found",
+                15
+        );
+
+        String search_prompt_text = search_input_field_element.getAttribute("text");
+        Assert.assertEquals(
+                "Unexpected prompt text in search input field ",
+                "Search…",
+                search_prompt_text
+        );
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
