@@ -266,7 +266,7 @@ public class WikiTestClass {
 
         waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
-                "Leningrad",
+                "Java",
                 "Cannot find search input",
                 5
         );
@@ -280,10 +280,12 @@ public class WikiTestClass {
         String search_text_value = search_input.getAttribute("text").toLowerCase();
         System.out.println(search_text_value);
 
-        isArticleHeaderLineContainsSearchText(By.id("org.wikipedia:id/page_list_item_container"),
+        boolean result = isArticleHeaderLineContainsSearchText(By.id("org.wikipedia:id/page_list_item_container"),
                 search_text_value,
                 "Does not found matches",
                 15);
+
+        Assert.assertTrue("Some searched articles does not have matching between header text and searched text value", result);
     }
 
 
