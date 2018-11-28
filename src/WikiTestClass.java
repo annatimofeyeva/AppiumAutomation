@@ -319,11 +319,10 @@ public class WikiTestClass {
 
         swipeUpToFindElement(
                 By.xpath("//android.widget.TextView[@text = 'View page in browser']"),
-                "swipeUpToFindElement does not work"
-
+                "Cannot find the end of the article" ,
+                20
         );
     }
-
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
@@ -333,13 +332,11 @@ public class WikiTestClass {
                 ExpectedConditions.presenceOfElementLocated(by));
     }
 
-
     private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.click();
         return element;
     }
-
 
     private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
@@ -354,7 +351,6 @@ public class WikiTestClass {
                 ExpectedConditions.invisibilityOfElementLocated(by)
         );
     }
-
 
     private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
@@ -375,7 +371,6 @@ public class WikiTestClass {
         for (WebElement list : lists) {
 
             if (!list.getAttribute("text").matches("(.*)search_text_value(.*)"))
-
                 return false;
         }
         return true;
@@ -386,31 +381,35 @@ public class WikiTestClass {
 
         TouchAction action = new TouchAction(driver);
 
-    //from Selenium:
+        //from Selenium:
         Dimension size = driver.manage().window().getSize();
 
-    // x coordinate  is not changing, when we swipe up; we began swiping from the screen middle point, so:
+        // x coordinate  is not changing, when we swipe up; we began swiping from the screen middle point, so:
         int x = size.width / 2;
-    // y coordinate: we receive point that located in 80% of screen (in the bottom)
-        int start_y = (int)(size.height * 0.8);
-        int end_y = (int)(size.height * 0.2);
+        // y coordinate: we receive point that located in 80% of screen (in the bottom)
+        int start_y = (int) (size.height * 0.8);
+        int end_y = (int) (size.height * 0.2);
 
         action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
     }
 
     //press on screen middle point and then swipe UP quickly
-        protected void swipeUpQuick() {
-
+    protected void swipeUpQuick() {
         swipeUP(200);
     }
 
-    protected void swipeUpToFindElement(By by, String error_message) {
+    protected void swipeUpToFindElement(By by, String error_message, int max_swipes) {
 
-        driver.findElements(by);
-        driver.findElements(by).size();
+        int already_swiped = 0;
 
-        while(driver.findElements(by).size() == 0) {
+        while (driver.findElements(by).size() == 0) {
+
+            if (already_swiped > max_swipes) {
+                waitForElementPresent(by, "Cannot find element by swiping up \n" + error_message, 0) ;
+                return;
+            }
             swipeUpQuick();
+            ++already_swiped;
         }
     }
 }
