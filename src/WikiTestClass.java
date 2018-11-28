@@ -33,11 +33,12 @@ public class WikiTestClass {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
-
+    //
+//    @After
+//    public void tearDown() {
+//        driver.quit();
+//    }
+//
     @Test
     public void firstTest() {
 
@@ -254,6 +255,38 @@ public class WikiTestClass {
         );
     }
 
+    @Test
+    public void testSearchForMatchingInArticlesHeaders() {
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Leningrad",
+                "Cannot find search input",
+                5
+        );
+
+        WebElement search_input = waitForElementPresent(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Search input field not found",
+                15
+        );
+
+        String search_text_value = search_input.getAttribute("text").toLowerCase();
+        System.out.println(search_text_value);
+
+        isArticleHeaderLineContainsSearchText(By.id("org.wikipedia:id/page_list_item_container"),
+                search_text_value,
+                "Does not found matches",
+                15);
+    }
+
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -296,4 +329,17 @@ public class WikiTestClass {
         int a = elements.size();
         return a;
     }
+
+    private boolean isArticleHeaderLineContainsSearchText(By by, String search_text_value, String error_message, long timeoutInSeconds) {
+
+        List<WebElement> lists = driver.findElements(by);
+
+        for (WebElement list : lists) {
+
+            if (!list.getAttribute("text").matches("(.*)search_text_value(.*)"))
+
+                return false;
+        }
+        return true;
+    };
 }
