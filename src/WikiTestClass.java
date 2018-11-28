@@ -1,10 +1,12 @@
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +23,7 @@ public class WikiTestClass {
 
     @Before
     public void setUp() throws Exception {
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "AndroidTestDevice");
@@ -33,12 +36,11 @@ public class WikiTestClass {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
-    //
-//    @After
-//    public void tearDown() {
-//        driver.quit();
-//    }
-//
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
+
     @Test
     public void firstTest() {
 
@@ -282,10 +284,45 @@ public class WikiTestClass {
 
         boolean result = isArticleHeaderLineContainsSearchText(By.id("org.wikipedia:id/page_list_item_container"),
                 search_text_value,
-                "Does not found matches",
+                "Does not found matches in article headers",
                 15);
 
         Assert.assertTrue("Some searched articles does not have matching between header text and searched text value", result);
+    }
+
+    @Test
+    public void testSwipeArticle() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
+                "Object-oriented programming language line",
+                5
+        );
+
+       waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                15
+        );
+
+       swipeUP(2000);
+       swipeUP(2000);
+       swipeUP(2000);
+       swipeUP(2000);
+       swipeUP(2000);
+       swipeUP(2000);
     }
 
 
@@ -344,4 +381,21 @@ public class WikiTestClass {
         }
         return true;
     };
+
+    //press on screen middle point and then swipe up
+    protected void swipeUP(int timeOfSwipe) {
+
+        TouchAction action = new TouchAction(driver);
+
+    //from Selenium:
+        Dimension size = driver.manage().window().getSize();
+
+    // x coordinate  is not changing, when we swipe up; we began swiping from the screen middle point, so:
+        int x = size.width / 2;
+    // y coordinate: we receive point that located in 80% of screen (in the bottom)
+        int start_y = (int)(size.height * 0.8);
+        int end_y = (int)(size.height * 0.2);
+
+        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
+    }
 }
