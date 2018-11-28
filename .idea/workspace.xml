@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AppiumAutomation/WikiTestClass.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WikiTestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WikiTestClass.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,13 +36,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="java" value="9439" />
+          <entry key="java" value="9817" />
           <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9439" />
+          <entry key="JAVA" value="9817" />
           <entry key="PLAIN_TEXT" value="122" />
         </counts>
       </usages-collector>
@@ -55,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="734">
-              <caret line="321" column="5" lean-forward="true" selection-start-line="321" selection-start-column="5" selection-end-line="321" selection-end-column="5" />
+            <state relative-caret-position="696">
+              <caret line="318" lean-forward="true" selection-start-line="318" selection-end-line="318" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,7 +149,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543379520792" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543382252140" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -242,8 +240,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.WikiTestClass.testSwipeArticle" />
-        <item itemvalue="JUnit.WikiTestClass.firstTest" />
         <item itemvalue="JUnit.WikiTestClass.testSearchAndDeleteSearchResults" />
+        <item itemvalue="JUnit.WikiTestClass.firstTest" />
         <item itemvalue="JUnit.WikiTestClass.testSearchForMatchingInArticlesHeaders" />
         <item itemvalue="JUnit.ApiDemosTestClass.firstTest" />
       </list>
@@ -271,27 +269,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WikiTestClass_testSearchForMatchingInArticlesHeaders - 2018.11.27 at 16h 48m 55s.xml">
-      <configuration name="WikiTestClass.testSearchForMatchingInArticlesHeaders" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSearchForMatchingInArticlesHeaders - 2018.11.27 at 16h 50m 56s.xml">
-      <configuration name="WikiTestClass.testSearchForMatchingInArticlesHeaders" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSearchForMatchingInArticlesHeaders - 2018.11.27 at 16h 56m 07s.xml">
-      <configuration name="WikiTestClass.testSearchForMatchingInArticlesHeaders" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSearchForMatchingInArticlesHeaders - 2018.11.27 at 17h 13m 08s.xml">
-      <configuration name="WikiTestClass.testSearchForMatchingInArticlesHeaders" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSearchForMatchingInArticlesHeaders - 2018.11.27 at 17h 14m 13s.xml">
-      <configuration name="WikiTestClass.testSearchForMatchingInArticlesHeaders" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_firstTest - 2018.11.27 at 18h 51m 12s.xml">
-      <configuration name="WikiTestClass.firstTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_firstTest - 2018.11.27 at 18h 55m 46s.xml">
-      <configuration name="WikiTestClass.firstTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WikiTestClass_firstTest - 2018.11.27 at 19h 04m 13s.xml">
       <configuration name="WikiTestClass.firstTest" configurationId="JUnit" />
     </history-entry>
@@ -300,6 +277,27 @@
     </history-entry>
     <history-entry file="WikiTestClass_firstTest - 2018.11.27 at 19h 44m 00s.xml">
       <configuration name="WikiTestClass.firstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSwipeArticle - 2018.11.27 at 20h 32m 49s.xml">
+      <configuration name="WikiTestClass.testSwipeArticle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSwipeArticle - 2018.11.27 at 20h 35m 00s.xml">
+      <configuration name="WikiTestClass.testSwipeArticle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSearchAndDeleteSearchResults - 2018.11.27 at 20h 43m 24s.xml">
+      <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSwipeArticle - 2018.11.27 at 21h 06m 03s.xml">
+      <configuration name="WikiTestClass.testSwipeArticle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSwipeArticle - 2018.11.27 at 21h 10m 23s.xml">
+      <configuration name="WikiTestClass.testSwipeArticle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSwipeArticle - 2018.11.27 at 21h 11m 35s.xml">
+      <configuration name="WikiTestClass.testSwipeArticle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSwipeArticle - 2018.11.27 at 21h 14m 56s.xml">
+      <configuration name="WikiTestClass.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -315,13 +313,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.86165273" visible="true" weight="0.24237429" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8611885" visible="true" weight="0.24237429" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4902507" weight="0.11871393" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.13834727" side_tool="true" visible="true" weight="0.24237429" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48978645" weight="0.11871393" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.13881151" side_tool="true" visible="true" weight="0.24237429" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49442896" weight="0.32893652" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -378,8 +376,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="321" column="5" lean-forward="true" selection-start-line="321" selection-start-column="5" selection-end-line="321" selection-end-column="5" />
+        <state relative-caret-position="696">
+          <caret line="318" lean-forward="true" selection-start-line="318" selection-end-line="318" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

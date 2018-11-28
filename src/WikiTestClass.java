@@ -36,10 +36,10 @@ public class WikiTestClass {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
+//    @After
+//    public void tearDown() {
+//        driver.quit();
+//    }
 
     @Test
     public void firstTest() {
@@ -291,6 +291,7 @@ public class WikiTestClass {
     }
 
     @Test
+
     public void testSwipeArticle() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -300,29 +301,27 @@ public class WikiTestClass {
 
         waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
-                "Java",
+                "Appium",
                 "Cannot find search input",
                 5
         );
 
+
+        //Xpath = //tag_name[@attribute = 'value']
         waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
-                "Object-oriented programming language line",
+                By.xpath("//android.widget.TextView[@text='Appium']"),
+                "Cannot find Appium in Search",
                 5
         );
 
-       waitForElementPresent(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find article title",
-                15
-        );
+        //long time swipe
+        //swipeUP(2000);
 
-       swipeUP(2000);
-       swipeUP(2000);
-       swipeUP(2000);
-       swipeUP(2000);
-       swipeUP(2000);
-       swipeUP(2000);
+        swipeUpToFindElement(
+                By.xpath("//android.widget.TextView[@text = 'View page in browser']"),
+                "swipeUpToFindElement does not work"
+
+        );
     }
 
 
@@ -382,7 +381,7 @@ public class WikiTestClass {
         return true;
     };
 
-    //press on screen middle point and then swipe up
+    //press on screen middle point and then swipe UP
     protected void swipeUP(int timeOfSwipe) {
 
         TouchAction action = new TouchAction(driver);
@@ -397,5 +396,21 @@ public class WikiTestClass {
         int end_y = (int)(size.height * 0.2);
 
         action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
+    }
+
+    //press on screen middle point and then swipe UP quickly
+        protected void swipeUpQuick() {
+
+        swipeUP(200);
+    }
+
+    protected void swipeUpToFindElement(By by, String error_message) {
+
+        driver.findElements(by);
+        driver.findElements(by).size();
+
+        while(driver.findElements(by).size() == 0) {
+            swipeUpQuick();
+        }
     }
 }
