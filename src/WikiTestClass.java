@@ -11,8 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import java.net.URL;
 import java.util.List;
 
@@ -58,7 +56,6 @@ public class WikiTestClass {
         waitForElementPresent(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
                 "Cannot find 'Island of Indonesia' topic searching by Java",
                 15
-
         );
     }
 
@@ -239,38 +236,39 @@ public class WikiTestClass {
         );
     }
 
+    // test mostly always failed - so not in all article's titles presents "Java"
+
+//    @Test
+//    public void testSearchForMatchingInArticlesHeaders() {
+//
+//        waitForElementAndClick(
+//                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+//                "Cannot find element to init search",
+//                5
+//        );
+//        waitForElementAndSendKeys(
+//                By.id("org.wikipedia:id/search_src_text"),
+//                "Java",
+//                "Cannot find search input",
+//                5
+//        );
+//        WebElement search_input = waitForElementPresent(
+//                By.id("org.wikipedia:id/search_src_text"),
+//                "Search input field not found",
+//                15
+//        );
+//        String search_text_value = search_input.getAttribute("text").toLowerCase();
+//        System.out.println(search_text_value);
+//
+//        boolean result = isArticleHeaderLineContainsSearchText(By.id("org.wikipedia:id/page_list_item_container"),
+//                search_text_value,
+//                "Does not found matches in article headers",
+//                15);
+//
+//        Assert.assertTrue("Some searched articles does not have matching between header text and searched text value", result);
+//    }
+
     @Test
-    public void testSearchForMatchingInArticlesHeaders() {
-
-        waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find element to init search",
-                5
-        );
-        waitForElementAndSendKeys(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Java",
-                "Cannot find search input",
-                5
-        );
-        WebElement search_input = waitForElementPresent(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Search input field not found",
-                15
-        );
-        String search_text_value = search_input.getAttribute("text").toLowerCase();
-        System.out.println(search_text_value);
-
-        boolean result = isArticleHeaderLineContainsSearchText(By.id("org.wikipedia:id/page_list_item_container"),
-                search_text_value,
-                "Does not found matches in article headers",
-                15);
-
-        Assert.assertTrue("Some searched articles does not have matching between header text and searched text value", result);
-    }
-
-    @Test
-
     public void testSwipeArticle() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -298,6 +296,90 @@ public class WikiTestClass {
                 "Cannot find the end of the article" ,
                 20
         );
+    }
+
+    @Test
+    public void saveFirstArticleToMyList() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
+                "Object-oriented programming language line",
+                5
+        );
+        WebElement title_element = waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                15
+        );
+        String article_title = title_element.getAttribute("text");
+        Assert.assertEquals(
+                "We see unexpected title",
+                "Java (programming language)",
+                article_title
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc ='More options']"),
+                "Cannot find 'More options' button",
+                15
+                );
+
+        waitForElementPresent(
+                By.xpath("//android.widget.TextView[@resource-id='org.wikipedia:id/title']"),
+                "'More options' menu was not downloaded completely",
+                15
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='Add to reading list']"),
+                "Cannot find 'Add to list' button",
+                5
+        );
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/onboarding_button"),
+                "Cannot find 'Cot it' button",
+                5
+        );
+        waitForElementAndClear(
+                By.xpath("//android.widget.EditText[@text='My reading list']"),
+                "Cannot clear text in 'Name of List' field",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//android.widget.EditText[@index='0']"),
+                "Learning programming",
+                "Can not enter list name",
+                5
+        );
+        waitForElementAndClick(
+        By.xpath("//android.widget.Button[@text='OK']"),
+        "Cannot find OK button, Can not close article",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot find X button",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
+                "Can not find 'redirection to saved articles list' button",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='Learning programming']"),
+                "Can not tap on article title",
+                5
+        );
+
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
