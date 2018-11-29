@@ -182,12 +182,12 @@ public class WikiTestClass {
                 "Cannot find X button",
                 15
         );
-        //verification that all searched articles were deleted from the page
-        waitForElementNotPresent(
-                By.id("org.wikipedia:id/page_list_item_container"),
-                "Articles were not deleted",
-                15
-        );
+
+        int amount_after_deletion = getAmountOfWebElements(By.xpath(search_result_locator));
+        System.out.println(amount);
+
+        Assert.assertTrue("Articles still present after deletion", amount_after_deletion < 1);
+
 
         /* verification of presence of the element with "text" attribute  =  "Search and read the free encyclopedia in your language" -
          so we can mark new search page
@@ -389,6 +389,38 @@ public class WikiTestClass {
                 "Cannot delete saved article",
                 5
         );
+    }
+    // выводим список статей, считаем размер и убеждаемся, что количество найденных статей больше 0
+    @Test
+    public void testAmountOfNotEmptySearch() {
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+
+        String search_line = "Linkin Park Diskography";
+        waitForElementAndSendKeys(
+                By.xpath("//android.widget.EditText[@text='Search…']"),
+                search_line,
+                "Cannot find search input",
+                5
+        );
+
+        waitForElementNotPresent(
+                By.xpath("//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']"),
+                "Cannot find anuthing by the request " + search_line,
+                15
+        );
+
+        int amount_of_search_result = getAmountOfWebElements(
+                By.xpath("//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']")
+        );
+
+        System.out.println(amount_of_search_result);
+
+        Assert.assertTrue("We found too few results", amount_of_search_result > 0);
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added">
-      <change afterPath="$PROJECT_DIR$/src/TestClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppiumAutomation/WikiTestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppiumAutomation/WikiTestClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WikiTestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WikiTestClass.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,13 +38,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="java" value="12037" />
+          <entry key="java" value="12890" />
           <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12037" />
+          <entry key="JAVA" value="12890" />
           <entry key="PLAIN_TEXT" value="122" />
         </counts>
       </usages-collector>
@@ -55,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4060">
-              <caret line="509" column="60" selection-start-line="509" selection-start-column="60" selection-end-line="509" selection-end-column="60" />
+            <state relative-caret-position="1196">
+              <caret line="188" column="64" selection-start-line="188" selection-start-column="64" selection-end-line="188" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#14680#14681#0" expanded="true" />
@@ -142,7 +142,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543456246204" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543533587621" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -172,40 +172,42 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WikiTestClass.saveFirstArticleToMyList">
-    <configuration name="TestClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestClass" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestClass.firstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestClass" />
-      <option name="METHOD_NAME" value="firstTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WikiTestClass.firstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
-      <option name="METHOD_NAME" value="firstTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.WikiTestClass.testSearchAndDeleteSearchResults">
     <configuration name="WikiTestClass.saveFirstArticleToMyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
       <option name="METHOD_NAME" value="saveFirstArticleToMyList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
+      <option name="METHOD_NAME" value="saveFirstArticleToMyListAndDeleteBySwipe" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WikiTestClass.testAmountOfNotEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
+      <option name="METHOD_NAME" value="testAmountOfNotEmptySearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
+      <option name="METHOD_NAME" value="testSearchAndDeleteSearchResults" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -222,19 +224,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.WikiTestClass.firstTest" />
       <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyList" />
-      <item itemvalue="JUnit.TestClass" />
-      <item itemvalue="JUnit.TestClass.firstTest" />
       <item itemvalue="JUnit.WikiTestClass.testSwipeArticle" />
+      <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" />
+      <item itemvalue="JUnit.WikiTestClass.testAmountOfNotEmptySearch" />
+      <item itemvalue="JUnit.WikiTestClass.testSearchAndDeleteSearchResults" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WikiTestClass.testSearchAndDeleteSearchResults" />
+        <item itemvalue="JUnit.WikiTestClass.testAmountOfNotEmptySearch" />
+        <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" />
         <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyList" />
         <item itemvalue="JUnit.WikiTestClass.testSwipeArticle" />
-        <item itemvalue="JUnit.WikiTestClass.firstTest" />
-        <item itemvalue="JUnit.TestClass.firstTest" />
-        <item itemvalue="JUnit.TestClass" />
       </list>
     </recent_temporary>
   </component>
@@ -260,35 +262,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 14m 15s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 14h 44m 52s.xml">
+      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_testSwipeArticle - 2018.11.28 at 17h 14m 55s.xml">
-      <configuration name="WikiTestClass.testSwipeArticle" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testSearchAndDeleteSearchResults - 2018.11.29 at 14h 46m 45s.xml">
+      <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 16m 07s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testSearchAndDeleteSearchResults - 2018.11.29 at 14h 58m 02s.xml">
+      <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 19m 15s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 00m 05s.xml">
+      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 24m 07s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 07m 37s.xml">
+      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 42m 01s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 09m 33s.xml">
+      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 47m 09s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 12m 46s.xml">
+      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 47m 25s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 14m 48s.xml">
+      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 49m 28s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 19m 21s.xml">
+      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WikiTestClass_saveFirstArticleToMyList - 2018.11.28 at 17h 51m 51s.xml">
-      <configuration name="WikiTestClass.saveFirstArticleToMyList" configurationId="JUnit" />
+    <history-entry file="WikiTestClass_testSearchAndDeleteSearchResults - 2018.11.29 at 15h 20m 33s.xml">
+      <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -304,15 +306,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8579387" visible="true" weight="0.14756802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8570102" visible="true" weight="0.14756802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48792943" weight="0.11871393" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.14206128" side_tool="true" visible="true" weight="0.14756802" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48746517" weight="0.11871393" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.14298978" side_tool="true" visible="true" weight="0.14756802" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4930362" weight="0.32893652" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49257195" weight="0.32893652" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -371,8 +373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4060">
-          <caret line="509" column="60" selection-start-line="509" selection-start-column="60" selection-end-line="509" selection-end-column="60" />
+        <state relative-caret-position="1196">
+          <caret line="188" column="64" selection-start-line="188" selection-start-column="64" selection-end-line="188" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#14680#14681#0" expanded="true" />
