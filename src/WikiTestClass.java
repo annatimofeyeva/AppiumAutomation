@@ -133,7 +133,7 @@ public class WikiTestClass {
         );
         WebElement search_input_field_element = waitForElementPresent(
                 By.id("org.wikipedia:id/search_src_text"),
-                "Search input field is not found",
+                "Cannot find search input field",
                 15
         );
         String search_prompt_text = search_input_field_element.getAttribute("text");
@@ -185,7 +185,7 @@ public class WikiTestClass {
         //verification that all searched articles were deleted from the page
         waitForElementNotPresent(
                 By.id("org.wikipedia:id/page_list_item_container"),
-                "Articles did not deleted",
+                "Articles were not deleted",
                 15
         );
 
@@ -209,7 +209,7 @@ public class WikiTestClass {
         //verification of prompt "Search…" text
         WebElement search_input_field_element = waitForElementPresent(
                 By.id("org.wikipedia:id/search_src_text"),
-                " Search input is not found",
+                " Cannot find Search input field",
                 15
         );
 
@@ -299,7 +299,7 @@ public class WikiTestClass {
     }
 
     @Test
-    public void saveFirstArticleToMyList() {
+    public void saveFirstArticleToMyListAndDeleteBySwipe() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
@@ -353,6 +353,7 @@ public class WikiTestClass {
                 "Cannot clear text in 'Name of List' field",
                 5
         );
+
         waitForElementAndSendKeys(
                 By.xpath("//android.widget.EditText[@index='0']"),
                 "Learning programming",
@@ -371,15 +372,23 @@ public class WikiTestClass {
         );
         waitForElementAndClick(
                 By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
-                "Can not find 'redirection to saved articles list' button",
+                "Cannot find 'redirection to saved articles list' button",
                 5
         );
         waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Learning programming']"),
-                "Can not tap on article title",
+                "Cannot tap on article title",
                 5
         );
-
+        swipeElementToLeft(
+                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
+                "Cannot find swipe article"
+        );
+        waitForElementNotPresent(
+                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
+                "Cannot delete saved article",
+                5
+        );
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
@@ -434,7 +443,7 @@ public class WikiTestClass {
         return true;
     };
 
-    //press on screen middle point and then swipe UP
+    //Press on screen middle point and then swipe UP
     protected void swipeUP(int timeOfSwipe) {
 
         TouchAction action = new TouchAction(driver);
@@ -448,7 +457,11 @@ public class WikiTestClass {
         int start_y = (int) (size.height * 0.8);
         int end_y = (int) (size.height * 0.2);
 
-        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
+        action
+                .press(x, start_y)
+                .waitAction(timeOfSwipe)
+                .moveTo(x, end_y)
+                .release().perform();
     }
 
     //press on screen middle point and then swipe UP quickly
@@ -469,5 +482,35 @@ public class WikiTestClass {
             swipeUpQuick();
             ++already_swiped;
         }
+    }
+
+    protected void swipeElementToLeft( By by, String error_message) {
+
+        WebElement element = waitForElementPresent(
+                by,
+                error_message,
+                10);
+
+        // функция запишет в переменную самую левую точку по оси Х
+        int left_x = element.getLocation().getX();
+
+        int right_x = left_x + element.getSize().getWidth();
+
+        int upper_y = element.getLocation().getY();
+
+        int lower_y = upper_y + element.getSize().getHeight();
+
+        int middle_y = (upper_y + lower_y) / 2;
+
+        // инициализируем драйвер
+        TouchAction action = new TouchAction(driver);
+
+        action
+                .press(right_x, middle_y)
+                // really important to do long swipe - > 150
+                .waitAction(500)
+                .moveTo(left_x, middle_y)
+                .release()
+                .perform();
     }
 }
