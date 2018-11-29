@@ -407,20 +407,17 @@ public class WikiTestClass {
                 "Cannot find search input",
                 5
         );
-
-        waitForElementNotPresent(
+        waitForElementPresent(
                 By.xpath("//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']"),
-                "Cannot find anuthing by the request " + search_line,
+                "Cannot find anything by the request " + search_line,
                 15
         );
+        String search_result_locator = "//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']";
 
-        int amount_of_search_result = getAmountOfWebElements(
-                By.xpath("//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']")
-        );
+        int amount = getAmountOfWebElements(By.xpath(search_result_locator));
+        System.out.println(amount);
 
-        System.out.println(amount_of_search_result);
-
-        Assert.assertTrue("We found too few results", amount_of_search_result > 0);
+        Assert.assertTrue("Number of articles less then 1", amount > 0);
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
