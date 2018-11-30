@@ -10,7 +10,7 @@ You will need the following things properly installed on your computer.
 * Appium
 
 ## Installation
-* git clone <repository-url>` this repository
+* git clone 'repository-url'` this repository
 * Open the project in Intellij Idea
 
 ## Project videos
