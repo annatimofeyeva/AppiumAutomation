@@ -514,6 +514,36 @@ public class WikiTestClass {
                 title_after_second_rotation
         );
     }
+    @Test
+    public void testSearchArticleInBackground(){
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+        waitForElementPresent(
+                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
+                "Object-oriented programming language line",
+                5
+        );
+
+        // set 2 seconds for staying app in background
+        driver.runAppInBackground(2);
+
+        waitForElementPresent(
+                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
+                "Cannot find article after returning from background",
+                5
+        );
+    }
+
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
