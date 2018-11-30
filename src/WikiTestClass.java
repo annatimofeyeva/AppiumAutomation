@@ -1,6 +1,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,8 +13,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.List;
+
 
 
 public class WikiTestClass {
@@ -361,7 +365,7 @@ public class WikiTestClass {
         );
 
         waitForElementAndSendKeys(
-                By.xpath("//android.widget.EditText[@index='0']"),
+                By.xpath("//android.widget.EditText[@NAF='true']"),
                 "Learning programming",
                 "Can not enter list name",
                 5
@@ -382,18 +386,18 @@ public class WikiTestClass {
                 5
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.TextView[@text='Learning programming']"),
+                By.xpath("//android.support.v7.widget.RecyclerView[@resource-id='org.wikipedia:id/reading_list_list']//android.widget.ImageView[@resource-id='org.wikipedia:id/item_image_1']"),
                 "Cannot tap on article title",
                 5
         );
-        swipeElementToLeft(
-                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
-                "Cannot find swipe article"
+       swipeElementToLeft(
+               By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
+               "Cannot find swipe article"
         );
         waitForElementNotPresent(
-                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
+               By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
                 "Cannot delete saved article",
-                5
+                15
         );
     }
 
@@ -514,6 +518,7 @@ public class WikiTestClass {
                 title_after_second_rotation
         );
     }
+
     @Test
     public void testSearchArticleInBackground(){
 
@@ -544,6 +549,193 @@ public class WikiTestClass {
         );
     }
 
+    @Test
+    public void testSaveTwoArticlesAndThenDeleteOneArticle() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
+                "Cannot find 'Object-oriented programming language' line",
+                5
+        );
+        WebElement title_element = waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                15
+        );
+        String article_title = title_element.getAttribute("text");
+        Assert.assertEquals(
+                "We see unexpected title",
+                "Java (programming language)",
+                article_title
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc ='More options']"),
+                "Cannot find 'More options' button",
+                15
+        );
+
+        waitForElementPresent(
+                By.xpath("//android.widget.TextView[@resource-id='org.wikipedia:id/title']"),
+                "'More options' menu was not downloaded completely",
+                15
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='Add to reading list']"),
+                "Cannot find 'Add to list' button",
+                5
+        );
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/onboarding_button"),
+                "Cannot find 'Cot it' button",
+                5
+        );
+        waitForElementAndClear(
+                By.xpath("//android.widget.EditText[@text='My reading list']"),
+                "Cannot clear text in 'Name of List' field",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//android.widget.EditText[@NAF='true']"),
+                "Learning programming",
+                "Can not enter list name",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.Button[@text='OK']"),
+                "Cannot find OK button, Can not close article",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot find X button",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
+                "Cannot find 'redirection to saved articles list' button",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='Learning programming']"),
+                "Cannot tap on article title",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='Learning programming']"),
+                "Cannot tap on article title",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot find 'Navigate up button'",
+                10
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[@content-desc='Explore']"),
+                "Cannot find 'Explore' button",
+                10
+        );
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Java (software platform)')]"),
+                "Cannot find 'Object-oriented programming language' line",
+                5
+        );
+//        WebElement title_element2 = waitForElementPresent(
+//                By.id("org.wikipedia:id/view_page_title_text"),
+//                "Cannot find article title",
+//                15
+//        );
+        String article_title2 = title_element.getAttribute("text");
+        Assert.assertEquals(
+                "We see unexpected title",
+                "Java (software platform)",
+                article_title2
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc ='More options']"),
+                "Cannot find 'More options' button",
+                15
+        );
+
+        waitForElementPresent(
+                By.xpath("//android.widget.TextView[@resource-id='org.wikipedia:id/title']"),
+                "'More options' menu was not downloaded completely",
+                15
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='Add to reading list']"),
+                "Cannot find 'Add to list' button",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='Learning programming']"),
+                "Cannot find 'Learning programming' list",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot find 'Navigate up' button'",
+                10
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
+                "Cannot find 'My lists' button",
+                10
+        );
+
+        System.out.println(driver.getPageSource());
+
+        waitForElementAndClick(
+                By.xpath("//android.support.v7.widget.RecyclerView[@resource-id='org.wikipedia:id/reading_list_list']//android.widget.TextView[@text='Learning programming']"),
+                "Cannot find 'Learning programming' list",
+                10
+        );
+
+        swipeElementToLeft(
+                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
+                "Cannot swipe the element to left"
+        );
+
+        waitForElementNotPresent(
+                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
+                "Cannot delete saved article",
+                5
+        );
+
+        String title_of_the_not_deleted_article = waitForElementAndGetAttribute(
+                By.xpath("//android.widget.TextView[@text='Java (software platform)']"),
+                "text",
+                "Cannot get attribute of second article title",
+                15
+        );
+
+        System.out.println(title_of_the_not_deleted_article);
+        String expected_title = "Java (software platform)";
+
+        Assert.assertEquals(expected_title, title_of_the_not_deleted_article);
+    }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
