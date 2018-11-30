@@ -14,6 +14,7 @@ You will need the following things properly installed on your computer.
 * git clone 'repository-url'` this repository
 * Open the project in Intellij Idea
 
+## Video 
 * [Video 1 - Saving and deling articles](https://raw.githubusercontent.com/annatimofeyeva/AppiumAutomation/master/Wiki4.mp4)
 * [Video 2 - Screen rotation](https://raw.githubusercontent.com/annatimofeyeva/AppiumAutomation/master/Wiki4.mp4)
 
