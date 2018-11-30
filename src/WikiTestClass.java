@@ -869,6 +869,14 @@ public class WikiTestClass {
         }
     }
 
+    private void assertElementPresentwithTitlePresent (By by, String title, String error_message) {
+
+
+
+
+    }
+
+
     private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeOutInSeconds) {
 
         WebElement element = waitForElementPresent(by, error_message, timeOutInSeconds);

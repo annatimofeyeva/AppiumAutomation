@@ -36,13 +36,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="java" value="15369" />
+          <entry key="java" value="15475" />
           <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15369" />
+          <entry key="JAVA" value="15475" />
           <entry key="PLAIN_TEXT" value="122" />
         </counts>
       </usages-collector>
@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2097">
-              <caret line="403" column="88" selection-start-line="403" selection-start-column="88" selection-end-line="403" selection-end-column="88" />
+            <state relative-caret-position="6456">
+              <caret line="871" column="53" selection-start-line="871" selection-start-column="53" selection-end-line="871" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#29621#29622#0" expanded="true" />
@@ -140,7 +140,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543560751417" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543566320657" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -231,10 +231,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" />
+        <item itemvalue="JUnit.WikiTestClass.testChangeScreenOrientationOnSearchResults" />
         <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" />
         <item itemvalue="JUnit.WikiTestClass.testSaveTwoArticlesAndThenDeleteOne" />
         <item itemvalue="JUnit.WikiTestClass.testSearchArticleInBackground" />
-        <item itemvalue="JUnit.WikiTestClass.testChangeScreenOrientationOnSearchResults" />
       </list>
     </recent_temporary>
   </component>
@@ -260,24 +260,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 21h 53m 47s.xml">
-      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 22h 20m 05s.xml">
-      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 22h 24m 49s.xml">
-      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 22h 28m 36s.xml">
-      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 22h 29m 40s.xml">
-      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 22h 31m 35s.xml">
-      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 22h 35m 44s.xml">
       <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
     </history-entry>
@@ -289,6 +271,24 @@
     </history-entry>
     <history-entry file="WikiTestClass_saveFirstArticleToMyListAndDeleteBySwipe - 2018.11.29 at 22h 47m 21s.xml">
       <configuration name="WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_saveFirstArticleToMyListAndDeleteBySwipe - 2018.11.29 at 22h 52m 19s.xml">
+      <configuration name="WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_saveFirstArticleToMyListAndDeleteBySwipe - 2018.11.29 at 22h 53m 40s.xml">
+      <configuration name="WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.29 at 22h 55m 35s.xml">
+      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testChangeScreenOrientationOnSearchResults - 2018.11.30 at 00h 23m 37s.xml">
+      <configuration name="WikiTestClass.testChangeScreenOrientationOnSearchResults" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.30 at 00h 25m 00s.xml">
+      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.30 at 00h 27m 10s.xml">
+      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -304,15 +304,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8532962" weight="0.14756802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8523677" visible="true" weight="0.14756802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48467967" weight="0.11871393" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5083566" side_tool="true" visible="true" weight="0.32893652" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4842154" weight="0.11871393" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.14763232" side_tool="true" visible="true" weight="0.14756802" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" sideWeight="0.49164346" visible="true" weight="0.32893652" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49164346" weight="0.32893652" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -371,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2097">
-          <caret line="403" column="88" selection-start-line="403" selection-start-column="88" selection-end-line="403" selection-end-column="88" />
+        <state relative-caret-position="6456">
+          <caret line="871" column="53" selection-start-line="871" selection-start-column="53" selection-end-line="871" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#29621#29622#0" expanded="true" />
