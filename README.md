@@ -13,7 +13,10 @@ You will need the following things properly installed on your computer.
 * git clone 'repository-url'` this repository
 * Open the project in Intellij Idea
 
-## Project videos
+## Project videos:
+* ![](Wiki4.mp4)
+* ![](Wiki3.mp4)
+
 
 <video width="320" height="240" controls>
   <source src="video.mov" type="video/mp4">
