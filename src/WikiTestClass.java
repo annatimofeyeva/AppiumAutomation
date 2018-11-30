@@ -549,6 +549,11 @@ public class WikiTestClass {
         );
     }
 
+    //      - - - - - - - - - - Удаление статьи - - - - - - - - - - - - - - - -
+    //      - - - - - - - - - - Добавление второй статьи - - - - - - - - - - - - - - - -
+    //  - - - - - - - - - -Убеждаемся, что в списке 2 статьи и удаляем одну - - - - - - - - - -
+
+
     @Test
     public void testSaveTwoArticlesAndThenDeleteOneArticle() {
         waitForElementAndClick(
@@ -661,11 +666,7 @@ public class WikiTestClass {
                 "Cannot find 'Object-oriented programming language' line",
                 5
         );
-//        WebElement title_element2 = waitForElementPresent(
-//                By.id("org.wikipedia:id/view_page_title_text"),
-//                "Cannot find article title",
-//                15
-//        );
+
         String article_title2 = title_element.getAttribute("text");
         Assert.assertEquals(
                 "We see unexpected title",
@@ -735,6 +736,33 @@ public class WikiTestClass {
         String expected_title = "Java (software platform)";
 
         Assert.assertEquals(expected_title, title_of_the_not_deleted_article);
+    }
+
+    //     Написать тест, который открывает статью и убеждается, что у нее есть элемент title.
+// Важно: тест не должен дожидаться появления title, проверка должна производиться сразу.
+// Если title не найден - тест падает с ошибкой.
+    @Test
+    public void testCheckArticleTitlePresent() {
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' topic searching by ",
+                5
+        );
+        assertElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title immediately "
+        );
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
@@ -869,13 +897,14 @@ public class WikiTestClass {
         }
     }
 
-    private void assertElementPresentwithTitlePresent (By by, String title, String error_message) {
+    private void assertElementPresent(By by, String error_message) {
 
-
-
-
+        int amount_of_elements = getAmountOfWebElements(by);
+        if (amount_of_elements == 0) {
+            String default_message = "An element " + by.toString() + " supposed to be present";
+            throw new AssertionError(default_message + " " + error_message);
+        }
     }
-
 
     private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeOutInSeconds) {
 
