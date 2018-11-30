@@ -14,6 +14,8 @@ You will need the following things properly installed on your computer.
 * git clone 'repository-url'` this repository
 * Open the project in Intellij Idea
 
+[![Alt videl](/home/anya/AppiumAutomation/scr/Wiki4]
+
 ## Support and contact details
 _Please contact Anna Timofeyeva at anjatimofeyeva@gmail.com for any questions, feedback, or concerns._
 
