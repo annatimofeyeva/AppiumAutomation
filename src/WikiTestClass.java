@@ -498,6 +498,21 @@ public class WikiTestClass {
                 title_before_rotation,
                 title_after_rotation
         );
+
+        driver.rotate(ScreenOrientation.PORTRAIT);
+
+        String title_after_second_rotation = waitForElementAndGetAttribute(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "Cannot find title of article",
+                15
+        );
+
+        Assert.assertEquals(
+                "Article title have been changed after rotation",
+                title_before_rotation,
+                title_after_second_rotation
+        );
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
