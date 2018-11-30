@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added">
-      <change beforePath="$PROJECT_DIR$/src/WikiTestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WikiTestClass.java" afterDir="false" />
-    </list>
+    <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +34,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="java" value="16662" />
+          <entry key="java" value="16704" />
           <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="16662" />
+          <entry key="JAVA" value="16704" />
           <entry key="PLAIN_TEXT" value="122" />
         </counts>
       </usages-collector>
@@ -53,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="517" column="12" selection-start-line="517" selection-start-column="12" selection-end-line="517" selection-end-column="12" />
+            <state relative-caret-position="-6274">
+              <caret line="483" selection-start-line="483" selection-end-line="483" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#30753#30754#0" expanded="true" />
@@ -91,8 +89,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="286" />
-    <option name="y" value="298" />
+    <option name="x" value="254" />
+    <option name="y" value="194" />
     <option name="width" value="2200" />
     <option name="height" value="1341" />
   </component>
@@ -140,7 +138,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543619329429" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543619975208" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -260,9 +258,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WikiTestClass_testSearchAndDeleteSearchResults - 2018.11.30 at 14h 17m 04s.xml">
-      <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WikiTestClass_testSearchAndDeleteSearchResults - 2018.11.30 at 14h 23m 17s.xml">
       <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" configurationId="JUnit" />
     </history-entry>
@@ -290,10 +285,12 @@
     <history-entry file="WikiTestClass_testSearchAndDeleteSearchResults - 2018.11.30 at 14h 49m 17s.xml">
       <configuration name="WikiTestClass.testSearchAndDeleteSearchResults" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WikiTestClass_testSaveTwoArticlesAndThenDeleteOneArticle - 2018.11.30 at 15h 10m 26s.xml">
+      <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="286" y="298" width="2200" height="1341" extended-state="0" />
-    <editor active="true" />
+    <frame x="254" y="194" width="2200" height="1341" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992224" visible="true" weight="0.16666667" />
       <window_info id="Structure" order="1" sideWeight="0.5007776" side_tool="true" weight="0.17402206" />
@@ -304,13 +301,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8509749" visible="true" weight="0.14756802" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8509749" weight="0.14756802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48328692" weight="0.11871393" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.14902507" side_tool="true" visible="true" weight="0.14756802" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.48282266" visible="true" weight="0.11871393" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51717734" side_tool="true" visible="true" weight="0.11871393" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49071494" weight="0.32893652" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -371,8 +368,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="517" column="12" selection-start-line="517" selection-start-column="12" selection-end-line="517" selection-end-column="12" />
+        <state relative-caret-position="-6274">
+          <caret line="483" selection-start-line="483" selection-end-line="483" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#30753#30754#0" expanded="true" />

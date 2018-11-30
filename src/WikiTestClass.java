@@ -37,7 +37,7 @@ public class WikiTestClass {
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.quit();
     }
-    // -----print "Java" in Wiki search field and waitForElementPresent
+//  -----print "Java" in Wiki search field and waitForElementPresent
     @Test
     public void firstTest() {
         waitForElementAndClick(
@@ -56,7 +56,7 @@ public class WikiTestClass {
                 15
         );
     }
-    //------print "Java" in Wiki search field and delete request line
+//  ----print "Java" in Wiki search field and delete request line
     @Test
     public void testCancelSearch() {
         waitForElementAndClick(
@@ -86,6 +86,7 @@ public class WikiTestClass {
                 5
         );
     }
+//  -------- compare actual article title with attribute value
     @Test
     public void testCompareArticleTitle() {
         waitForElementAndClick(
@@ -117,7 +118,7 @@ public class WikiTestClass {
                 article_title
         );
     }
-    //------verification of prompt text in search filed
+//  ------verification of prompt text in search filed
     @Test
     public void testPlaceholderSearchPresent() {
         //verification that our prompt text in search inputField equals the value of "text" attribute in XML
@@ -138,7 +139,7 @@ public class WikiTestClass {
                 search_prompt_text
         );
     }
-    //------print "Java" in Wiki search field and delete searched articles
+//  ------print "Java" in Wiki search field and delete searched articles
     @Test
     public void testSearchAndDeleteSearchResults() {
         waitForElementAndClick(
@@ -175,10 +176,10 @@ public class WikiTestClass {
                 "We still can find some articles on page after deleting"
         );
     }
-    //-----just for practice: different assertions:
+//  -----just for practice: different assertions:
 
 //        Assert.assertTrue("Articles still present after deletion", amount_after_deletion < 1);
-////        /* verification of presence of the element with "text" attribute  =  "Search and read the free encyclopedia in your language" -
+//        /* verification of presence of the element with "text" attribute  =  "Search and read the free encyclopedia in your language" -
 //         so we can mark new search page
 //        */
 //        WebElement screen_element = waitForElementPresent(
@@ -247,7 +248,7 @@ public class WikiTestClass {
 //                15);
 //        Assert.assertTrue("Some searched articles does not have matching between header text and searched text value", result);
 //    }
-//    ------------------swiping
+//    ---------swiping
     @Test
     public void testSwipeArticle() {
         waitForElementAndClick(
@@ -368,7 +369,7 @@ public class WikiTestClass {
                 15
         );
     }
-    //------выводим список статей, считаем размер и убеждаемся, что количество найденных статей больше 0
+// ------выводим список статей, считаем размер и убеждаемся, что количество найденных статей больше 0
     @Test
     public void testAmountOfNotEmptySearch() {
         waitForElementAndClick(
