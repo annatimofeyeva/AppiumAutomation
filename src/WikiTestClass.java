@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -34,10 +35,11 @@ public class WikiTestClass {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
-//    @After
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @After
+    public void tearDown() {
+        driver.rotate(ScreenOrientation.PORTRAIT);
+        //driver.quit();
+    }
 
     @Test
     public void firstTest() {
@@ -106,7 +108,7 @@ public class WikiTestClass {
         );
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
-                "Object-oriented programming language line",
+                "Cannot find 'Object-oriented programming' topic",
                 5
         );
         WebElement title_element = waitForElementPresent(
@@ -454,6 +456,49 @@ public class WikiTestClass {
                 "We found some results by request " + search_line
         );
     }
+    @Test
+    public void testChangeScreenOrientationOnSearchResults() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+
+        String search_line = "Java";
+        waitForElementAndSendKeys(
+                By.xpath("//android.widget.EditText[@text='Search…']"),
+                search_line,
+                "Cannot find search input",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
+                "Cannot find 'Object-oriented programming' topic searching by " + search_line,
+                15
+        );
+
+        String title_before_rotation = waitForElementAndGetAttribute(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "Cannot find title of article",
+                15
+        );
+
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+
+        String title_after_rotation = waitForElementAndGetAttribute(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "Cannot find title of article",
+                15
+        );
+
+        Assert.assertEquals(
+                "Article title have been changed after rotation",
+                title_before_rotation,
+                title_after_rotation
+        );
+    }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
@@ -586,4 +631,15 @@ public class WikiTestClass {
             throw new AssertionError(default_message + " " + error_message);
         }
     }
+
+    private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeOutInSeconds) {
+
+        WebElement element = waitForElementPresent(by, error_message, timeOutInSeconds);
+
+        return element.getAttribute(attribute);
+    }
 }
+
+
+
+
