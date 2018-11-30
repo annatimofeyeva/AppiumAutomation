@@ -183,58 +183,62 @@ public class WikiTestClass {
                 15
         );
 
-        int amount_after_deletion = getAmountOfWebElements(By.xpath(search_result_locator));
-        System.out.println(amount);
-
-        Assert.assertTrue("Articles still present after deletion", amount_after_deletion < 1);
-
-
-        /* verification of presence of the element with "text" attribute  =  "Search and read the free encyclopedia in your language" -
-         so we can mark new search page
-        */
-        WebElement screen_element = waitForElementPresent(
-                By.id("org.wikipedia:id/search_empty_message"),
-                "Cannot find search message",
-                15
-        );
-
-        String search_message_text_in_the_middle_of_the_page = screen_element.getAttribute("text");
-        System.out.println(search_message_text_in_the_middle_of_the_page);
-
-        Assert.assertEquals(
-                "Unexpected search message displays",
-                "Search and read the free encyclopedia in your language",
-                search_message_text_in_the_middle_of_the_page
-        );
-        //verification of prompt "Search…" text
-        WebElement search_input_field_element = waitForElementPresent(
-                By.id("org.wikipedia:id/search_src_text"),
-                " Cannot find Search input field",
-                15
-        );
-
-        String search_prompt_text = search_input_field_element.getAttribute("text");
-        System.out.println(search_prompt_text);
-
-        Assert.assertEquals(
-                "Unexpected prompt text in search input field ",
-                "Search…",
-                search_prompt_text
-        );
-        // starting new search with value "Java" and counting search result
-        waitForElementAndSendKeys(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Java",
-                "Cannot find search input",
-                10
-        );
-
-        String input_text_string = search_input_field_element.getAttribute("text");
-        System.out.println(input_text_string);
-
-        Assert.assertEquals("Java", input_text_string
-        );
+        assertElementNotPresent(
+                By.xpath(search_result_locator),
+                "We still can find some articles on page after deleting"
+                );
     }
+
+
+//        Assert.assertTrue("Articles still present after deletion", amount_after_deletion < 1);
+//
+//
+//        /* verification of presence of the element with "text" attribute  =  "Search and read the free encyclopedia in your language" -
+//         so we can mark new search page
+//        */
+//        WebElement screen_element = waitForElementPresent(
+//                By.id("org.wikipedia:id/search_empty_message"),
+//                "Cannot find search message",
+//                15
+//        );
+//
+//        String search_message_text_in_the_middle_of_the_page = screen_element.getAttribute("text");
+//        System.out.println(search_message_text_in_the_middle_of_the_page);
+//
+//        Assert.assertEquals(
+//                "Unexpected search message displays",
+//                "Search and read the free encyclopedia in your language",
+//                search_message_text_in_the_middle_of_the_page
+//        );
+//        //verification of prompt "Search…" text
+//        WebElement search_input_field_element = waitForElementPresent(
+//                By.id("org.wikipedia:id/search_src_text"),
+//                " Cannot find Search input field",
+//                15
+//        );
+//
+//        String search_prompt_text = search_input_field_element.getAttribute("text");
+//        System.out.println(search_prompt_text);
+//
+//        Assert.assertEquals(
+//                "Unexpected prompt text in search input field ",
+//                "Search…",
+//                search_prompt_text
+//        );
+//        // starting new search with value "Java" and counting search result
+//        waitForElementAndSendKeys(
+//                By.id("org.wikipedia:id/search_src_text"),
+//                "Java",
+//                "Cannot find search input",
+//                10
+//        );
+//
+//        String input_text_string = search_input_field_element.getAttribute("text");
+//        System.out.println(input_text_string);
+//
+//        Assert.assertEquals("Java", input_text_string
+//        );
+
 
     // test mostly always failed - so not in all article's titles presents "Java"
 
@@ -390,6 +394,7 @@ public class WikiTestClass {
                 5
         );
     }
+
     // выводим список статей, считаем размер и убеждаемся, что количество найденных статей больше 0
     @Test
     public void testAmountOfNotEmptySearch() {
@@ -418,6 +423,36 @@ public class WikiTestClass {
         System.out.println(amount);
 
         Assert.assertTrue("Number of articles less then 1", amount > 0);
+    }
+
+    @Test
+    public void testAmountOfEmptySearch() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element to init search",
+                5
+        );
+
+        String search_line =" xvtsftcccvf";
+        waitForElementAndSendKeys(
+                By.xpath("//android.widget.EditText[@text='Search…']"),
+                search_line,
+                "Cannot find search input",
+                5
+        );
+
+        String search_result_locator = "//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']";
+        String empty_result_label = "//android.widget.TextView[@text='No results found']";
+
+        waitForElementPresent(
+                By.xpath(empty_result_label ),
+                "Cannot find empty result label by the request "+ search_line,
+                15
+        );
+        assertElementNotPresent(
+                By.xpath(search_result_locator),
+                "We found some results by request " + search_line
+        );
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
@@ -452,12 +487,6 @@ public class WikiTestClass {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.clear();
         return element;
-    }
-
-    private int getAmountOfWebElements(By by) {
-        List<WebElement> elements = driver.findElements(by);
-        int a = elements.size();
-        return a;
     }
 
     private boolean isArticleHeaderLineContainsSearchText(By by, String search_text_value, String error_message, long timeoutInSeconds) {
@@ -541,5 +570,20 @@ public class WikiTestClass {
                 .moveTo(left_x, middle_y)
                 .release()
                 .perform();
+    }
+
+    private int getAmountOfWebElements(By by) {
+        List<WebElement> elements = driver.findElements(by);
+        int a = elements.size();
+        return a;
+    }
+
+    private void assertElementNotPresent(By by, String error_message) {
+
+        int amount_of_elements = getAmountOfWebElements(by);
+        if(amount_of_elements > 0) {
+            String default_message = "An element '" + by.toString() + "' suppose to be not present" ;
+            throw new AssertionError(default_message + " " + error_message);
+        }
     }
 }

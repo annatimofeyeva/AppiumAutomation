@@ -36,13 +36,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="java" value="12929" />
+          <entry key="java" value="13739" />
           <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12929" />
+          <entry key="JAVA" value="13739" />
           <entry key="PLAIN_TEXT" value="122" />
         </counts>
       </usages-collector>
@@ -53,12 +53,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="409" selection-start-line="409" selection-end-line="409" />
+            <state relative-caret-position="963">
+              <caret line="189" column="5" selection-start-line="189" selection-start-column="5" selection-end-line="189" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#14680#14681#0" expanded="true" />
-                <element signature="e#14708#14709#0" expanded="true" />
+                <element signature="e#19288#19289#0" expanded="true" />
+                <element signature="e#19316#19317#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,7 +140,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543534556342" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543538149590" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -170,7 +170,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WikiTestClass.testAmountOfNotEmptySearch">
+  <component name="RunManager" selected="JUnit.WikiTestClass.testSearchAndDeleteSearchResults">
     <configuration name="WikiTestClass.saveFirstArticleToMyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
@@ -186,6 +186,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
       <option name="METHOD_NAME" value="saveFirstArticleToMyListAndDeleteBySwipe" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WikiTestClass.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
+      <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,30 +221,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WikiTestClass.testSwipeArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
-      <option name="METHOD_NAME" value="testSwipeArticle" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyList" />
-      <item itemvalue="JUnit.WikiTestClass.testSwipeArticle" />
       <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" />
       <item itemvalue="JUnit.WikiTestClass.testAmountOfNotEmptySearch" />
       <item itemvalue="JUnit.WikiTestClass.testSearchAndDeleteSearchResults" />
+      <item itemvalue="JUnit.WikiTestClass.testAmountOfEmptySearch" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WikiTestClass.testAmountOfNotEmptySearch" />
         <item itemvalue="JUnit.WikiTestClass.testSearchAndDeleteSearchResults" />
+        <item itemvalue="JUnit.WikiTestClass.testAmountOfEmptySearch" />
+        <item itemvalue="JUnit.WikiTestClass.testAmountOfNotEmptySearch" />
         <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyListAndDeleteBySwipe" />
         <item itemvalue="JUnit.WikiTestClass.saveFirstArticleToMyList" />
-        <item itemvalue="JUnit.WikiTestClass.testSwipeArticle" />
       </list>
     </recent_temporary>
   </component>
@@ -260,15 +260,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 00m 05s.xml">
-      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 07m 37s.xml">
-      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 09m 33s.xml">
-      <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 12m 46s.xml">
       <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
@@ -290,6 +281,15 @@
     <history-entry file="WikiTestClass_testAmountOfNotEmptySearch - 2018.11.29 at 15h 36m 21s.xml">
       <configuration name="WikiTestClass.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WikiTestClass_testAmountOfEmptySearch - 2018.11.29 at 16h 27m 39s.xml">
+      <configuration name="WikiTestClass.testAmountOfEmptySearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testAmountOfEmptySearch - 2018.11.29 at 16h 29m 03s.xml">
+      <configuration name="WikiTestClass.testAmountOfEmptySearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WikiTestClass_testAmountOfEmptySearch - 2018.11.29 at 16h 30m 34s.xml">
+      <configuration name="WikiTestClass.testAmountOfEmptySearch" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="131" y="91" width="2200" height="1341" extended-state="0" />
@@ -304,13 +304,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.856546" visible="true" weight="0.14756802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8560817" visible="true" weight="0.14756802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48700094" weight="0.11871393" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.14345405" side_tool="true" visible="true" weight="0.14756802" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48653668" weight="0.11871393" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.14391829" side_tool="true" visible="true" weight="0.14756802" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49257195" weight="0.32893652" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -371,12 +371,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="409" selection-start-line="409" selection-end-line="409" />
+        <state relative-caret-position="963">
+          <caret line="189" column="5" selection-start-line="189" selection-start-column="5" selection-end-line="189" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#14680#14681#0" expanded="true" />
-            <element signature="e#14708#14709#0" expanded="true" />
+            <element signature="e#19288#19289#0" expanded="true" />
+            <element signature="e#19316#19317#0" expanded="true" />
           </folding>
         </state>
       </provider>
