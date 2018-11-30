@@ -14,8 +14,8 @@ You will need the following things properly installed on your computer.
 * Open the project in Intellij Idea
 
 ## Project videos:
-* ![](Wiki4.mp4)
-* ![](Wiki3.mp4)
+* ![](/home/anya/AppiumAutomation/src/Wiki4.mp4)
+* ![](/home/anya/AppiumAutomation/src/Wiki4.mp3)
 
 
 <video width="320" height="240" controls>
