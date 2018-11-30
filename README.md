@@ -6,6 +6,7 @@ You will need the following things properly installed on your computer.
 
 * Java
 * Android SDK
+* JUnit
 * Inellij Idea
 * Appium
 
