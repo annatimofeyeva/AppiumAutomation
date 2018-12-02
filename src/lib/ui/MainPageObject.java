@@ -11,14 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class MainPageObject {
-
     protected AppiumDriver driver;
-
+    //Конструктор
     public MainPageObject(AppiumDriver driver) {
-
         this.driver = driver;
     };
-
     public WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -153,4 +150,4 @@ public class MainPageObject {
 
         return element.getAttribute(attribute);
     }
-} //end of class
+}

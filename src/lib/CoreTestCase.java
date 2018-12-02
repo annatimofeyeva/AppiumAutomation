@@ -17,9 +17,7 @@ public class CoreTestCase extends TestCase {
 
     @Override
     protected void setUp() throws Exception {
-
         super.setUp();
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "AndroidTestDevice");
@@ -28,17 +26,12 @@ public class CoreTestCase extends TestCase {
         capabilities.setCapability("appPackage", "org.wikipedia");
         capabilities.setCapability("appActivity", ".main.MainActivity");
         capabilities.setCapability("app", "/home/anya/AppiumAutomation/apks/org.wikipedia.apk");
-
         driver = new AndroidDriver(new URL(AppiumURL), capabilities);
     }
-
     @Override
     protected void tearDown() throws Exception{
-
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.quit();
-
         super.tearDown();
     }
-
 }
