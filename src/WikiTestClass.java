@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 public class WikiTestClass extends CoreTestCase {
 
     private MainPageObject MainPageObject;
-
     protected void setUp() throws Exception{
 
         // обращение к setUP() в JUnit
@@ -17,10 +16,6 @@ public class WikiTestClass extends CoreTestCase {
 
         MainPageObject = new MainPageObject(driver);
     }
-
-
-
-
 //  -----testSearch name is for the JUnit; All test need to start with "test". JUnit is now able to see this test and start it
     @Test
     public void testSearch() {
@@ -30,12 +25,14 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find element to init search",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Java",
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementPresent(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
                 "Cannot find 'Island of Indonesia' topic searching by Java",
                 15
@@ -44,27 +41,32 @@ public class WikiTestClass extends CoreTestCase {
 //  ----print "Java" in Wiki search field and delete request line
     @Test
     public void testCancelSearch() {
+
         MainPageObject.waitForElementAndClick(
                 By.id("org.wikipedia:id/search_container"),
                 "Cannot find 'Search wikipedia' input",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Java",
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClear(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Cannot find search field",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.id("org.wikipedia:id/search_close_btn"),
                 "Cannot find 'X' to cancel search",
                 5
         );
+
         MainPageObject.waitForElementNotPresent(
                 By.id("org.wikipedia:id/search_close_btn"),
                 "X is still present on page",
@@ -74,11 +76,13 @@ public class WikiTestClass extends CoreTestCase {
 //  -------- compare actual article title with attribute value
     @Test
     public void testCompareArticleTitle() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
                 5
         );
+
         String search_line = "Java";
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
@@ -86,6 +90,7 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
                 "Cannot find 'Object-oriented programming' topic",
@@ -96,6 +101,7 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find article title",
                 15
         );
+
         String article_title = title_element.getAttribute("text");
         Assert.assertEquals(
                 "We see unexpected title",
@@ -112,11 +118,13 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find 'Search Wikipedia' in input field",
                 5
         );
+
         WebElement search_input_field_element = MainPageObject.waitForElementPresent(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Cannot find search input field",
                 15
         );
+
         String search_prompt_text = search_input_field_element.getAttribute("text");
         Assert.assertEquals(
                 "Unexpected prompt text in search input field ",
@@ -127,11 +135,13 @@ public class WikiTestClass extends CoreTestCase {
 //  ------print "Java" in Wiki search field and delete searched articles
     @Test
     public void testSearchAndDeleteSearchResults() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Seattle",
@@ -141,11 +151,11 @@ public class WikiTestClass extends CoreTestCase {
 
         String search_line = "Java";
         String search_result_locator = "//*[@class='android.widget.LinearLayout']/*[@resource-id='org.wikipedia:id/page_list_item_image']";
-
         MainPageObject.waitForElementPresent(By.xpath(search_result_locator),
                 "Cannot find anything by the request" + search_line,
                 15
         );
+
         int amount = MainPageObject.getAmountOfWebElements(By.xpath(search_result_locator));
         System.out.println(amount);
 
@@ -232,17 +242,20 @@ public class WikiTestClass extends CoreTestCase {
 //    ---------swiping
     @Test
     public void testSwipeArticle() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Appium",
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Appium']"),
                 "Cannot find Appium in Search",
@@ -259,11 +272,13 @@ public class WikiTestClass extends CoreTestCase {
 //  -------- save article to list, then delete from list by swipe, then verification - waitForElementNotPresent()
     @Test
     public void testSaveFirstArticleToMyListAndDeleteBySwipe() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
                 5
         );
+
         String search_line = "Java";
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
@@ -271,22 +286,26 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
                 "Object-oriented programming language line",
                 5
         );
+
         WebElement title_element = MainPageObject.waitForElementPresent(
                 By.id("org.wikipedia:id/view_page_title_text"),
                 "Cannot find article title",
                 15
         );
+
         String article_title = title_element.getAttribute("text");
         Assert.assertEquals(
                 "We see unexpected title",
                 "Java (programming language)",
                 article_title
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.ImageView[@content-desc ='More options']"),
                 "Cannot find 'More options' button",
@@ -298,6 +317,7 @@ public class WikiTestClass extends CoreTestCase {
                 "'More options' menu was not downloaded completely",
                 15
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Add to reading list']"),
                 "Cannot find 'Add to list' button",
@@ -308,11 +328,13 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find 'Cot it' button",
                 5
         );
+
         MainPageObject.waitForElementAndClear(
                 By.xpath("//android.widget.EditText[@text='My reading list']"),
                 "Cannot clear text in 'Name of List' field",
                 5
         );
+
 
         MainPageObject.waitForElementAndSendKeys(
                 By.xpath("//android.widget.EditText[@NAF='true']"),
@@ -320,30 +342,36 @@ public class WikiTestClass extends CoreTestCase {
                 "Can not enter list name",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
         By.xpath("//android.widget.Button[@text='OK']"),
         "Cannot find OK button, Can not close article",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
                 "Cannot find X button",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
                 "Cannot find 'redirection to saved articles list' button",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.support.v7.widget.RecyclerView[@resource-id='org.wikipedia:id/reading_list_list']//android.widget.ImageView[@resource-id='org.wikipedia:id/item_image_1']"),
                 "Cannot tap on article title",
                 5
         );
+
         MainPageObject.swipeElementToLeft(
                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
                "Cannot find swipe article"
         );
+
         MainPageObject.waitForElementNotPresent(
                By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
                 "Cannot delete saved article",
@@ -353,6 +381,7 @@ public class WikiTestClass extends CoreTestCase {
 // ------выводим список статей, считаем размер и убеждаемся, что количество найденных статей больше 0
     @Test
     public void testAmountOfNotEmptySearch() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
@@ -366,20 +395,23 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementPresent(
                 By.xpath("//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']"),
                 "Cannot find anything by the request " + search_line,
                 15
         );
-        String search_result_locator = "//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']";
 
+        String search_result_locator = "//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']";
         int amount = MainPageObject.getAmountOfWebElements(By.xpath(search_result_locator));
         System.out.println(amount);
 
         Assert.assertTrue("Number of articles less then 1", amount > 0);
     }
+
     @Test
     public void testAmountOfEmptySearch() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
@@ -396,12 +428,12 @@ public class WikiTestClass extends CoreTestCase {
 
         String search_result_locator = "//android.widget.LinearLayout[@resource-id = 'org.wikipedia:id/page_list_item_container']";
         String empty_result_label = "//android.widget.TextView[@text='No results found']";
-
         MainPageObject.waitForElementPresent(
                 By.xpath(empty_result_label ),
                 "Cannot find empty result label by the request "+ search_line,
                 15
         );
+
         MainPageObject.assertElementNotPresent(
                 By.xpath(search_result_locator),
                 "We found some results by request " + search_line
@@ -410,6 +442,7 @@ public class WikiTestClass extends CoreTestCase {
 //  --------- change screen rotation - video Wiki.mp3 in src
     @Test
     public void testChangeScreenOrientationOnSearchResults() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
@@ -423,11 +456,13 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
                 "Cannot find 'Object-oriented programming' topic searching by " + search_line,
                 15
         );
+
         String title_before_rotation = MainPageObject.waitForElementAndGetAttribute(
                 By.id("org.wikipedia:id/view_page_title_text"),
                 "text",
@@ -443,6 +478,7 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find title of article",
                 15
         );
+
         Assert.assertEquals(
                 "Article title have been changed after rotation",
                 title_before_rotation,
@@ -457,6 +493,7 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find title of article",
                 15
         );
+
         Assert.assertEquals(
                 "Article title have been changed after rotation",
                 title_before_rotation,
@@ -465,17 +502,20 @@ public class WikiTestClass extends CoreTestCase {
     }
     @Test
     public void testSearchArticleInBackground(){
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Java",
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementPresent(
                 By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
                 "Object-oriented programming language line",
@@ -495,11 +535,13 @@ public class WikiTestClass extends CoreTestCase {
 //  -------- then verification that second article still in the list - waitForElementNotPresent() - video Wiki.mp4 in src
     @Test
     public void testSaveTwoArticlesAndThenDeleteOneArticle() {
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
                 5
         );
+
         String search_line = "java";
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
@@ -507,11 +549,13 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
                 "Cannot find 'Object-oriented programming language' line",
                 5
         );
+
         WebElement title_element = MainPageObject.waitForElementPresent(
                 By.id("org.wikipedia:id/view_page_title_text"),
                 "Cannot find article title",
@@ -523,6 +567,7 @@ public class WikiTestClass extends CoreTestCase {
                 "Java (programming language)",
                 article_title
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.ImageView[@content-desc ='More options']"),
                 "Cannot find 'More options' button",
@@ -534,73 +579,87 @@ public class WikiTestClass extends CoreTestCase {
                 "'More options' menu was not downloaded completely",
                 15
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Add to reading list']"),
                 "Cannot find 'Add to list' button",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.id("org.wikipedia:id/onboarding_button"),
                 "Cannot find 'Cot it' button",
                 5
         );
+
         MainPageObject.waitForElementAndClear(
                 By.xpath("//android.widget.EditText[@text='My reading list']"),
                 "Cannot clear text in 'Name of List' field",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.xpath("//android.widget.EditText[@NAF='true']"),
                 "Learning programming",
                 "Can not enter list name",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.Button[@text='OK']"),
                 "Cannot find OK button, Can not close article",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
                 "Cannot find X button",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
                 "Cannot find 'redirection to saved articles list' button",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Learning programming']"),
                 "Cannot tap on article title",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Learning programming']"),
                 "Cannot tap on article title",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
                 "Cannot find 'Navigate up button'",
                 10
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.FrameLayout[@content-desc='Explore']"),
                 "Cannot find 'Explore' button",
                 10
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element to init search",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
                 search_line,
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Java (software platform)')]"),
                 "Cannot find 'Object-oriented programming language' line",
@@ -613,26 +672,31 @@ public class WikiTestClass extends CoreTestCase {
                 "Java (software platform)",
                 article_title2
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.ImageView[@content-desc ='More options']"),
                 "Cannot find 'More options' button",
                 15
         );
+
         MainPageObject.waitForElementPresent(
                 By.xpath("//android.widget.TextView[@resource-id='org.wikipedia:id/title']"),
                 "'More options' menu was not downloaded completely",
                 15
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Add to reading list']"),
                 "Cannot find 'Add to list' button",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.TextView[@text='Learning programming']"),
                 "Cannot find 'Learning programming' list",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
                 "Cannot find 'Navigate up' button'",
@@ -651,6 +715,7 @@ public class WikiTestClass extends CoreTestCase {
                 "Cannot find 'Learning programming' list",
                 10
         );
+
         MainPageObject.swipeElementToLeft(
                 By.xpath("//android.widget.TextView[@text='Java (programming language)']"),
                 "Cannot swipe the element to left"
@@ -678,17 +743,20 @@ public class WikiTestClass extends CoreTestCase {
 // -Если title не найден - тест падает с ошибкой.
     @Test
     public void testCheckArticleTitlePresent() {
+
         MainPageObject.waitForElementAndClick(
                 By.id("org.wikipedia:id/search_container"),
                 "Cannot find 'Search Wikipedia' input",
                 5
         );
+
         MainPageObject.waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Java",
                 "Cannot find search input",
                 5
         );
+
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Object-oriented programming language' topic searching by ",

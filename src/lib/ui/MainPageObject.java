@@ -7,15 +7,16 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 
 public class MainPageObject {
+
     protected AppiumDriver driver;
     //Конструктор
     public MainPageObject(AppiumDriver driver) {
         this.driver = driver;
     };
+
     public WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
 
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -23,16 +24,19 @@ public class MainPageObject {
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(by));
     }
+
     public WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.click();
         return element;
     }
+
     public WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.sendKeys(value);
         return element;
     }
+
     public boolean waitForElementNotPresent(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -40,11 +44,13 @@ public class MainPageObject {
                 ExpectedConditions.invisibilityOfElementLocated(by)
         );
     }
+
     public WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.clear();
         return element;
     }
+
     public boolean isArticleHeaderLineContainsSearchText(By by, String search_text_value, String error_message, long timeoutInSeconds) {
 
         List<WebElement> lists = driver.findElements(by);
@@ -80,6 +86,7 @@ public class MainPageObject {
     public void swipeUpQuick() {
         swipeUP(200);
     }
+
     public void swipeUpToFindElement(By by, String error_message, int max_swipes) {
 
         int already_swiped = 0;
@@ -94,6 +101,7 @@ public class MainPageObject {
             ++already_swiped;
         }
     }
+
     public void swipeElementToLeft( By by, String error_message) {
 
         WebElement element = waitForElementPresent(
@@ -123,11 +131,13 @@ public class MainPageObject {
                 .release()
                 .perform();
     }
+
     public int getAmountOfWebElements(By by) {
         List<WebElement> elements = driver.findElements(by);
         int a = elements.size();
         return a;
     }
+
     public void assertElementNotPresent(By by, String error_message) {
 
         int amount_of_elements = getAmountOfWebElements(by);
@@ -136,6 +146,7 @@ public class MainPageObject {
             throw new AssertionError(default_message + " " + error_message);
         }
     }
+
     public void assertElementPresent(By by, String error_message) {
 
         int amount_of_elements = getAmountOfWebElements(by);
@@ -144,6 +155,7 @@ public class MainPageObject {
             throw new AssertionError(default_message + " " + error_message);
         }
     }
+
     public String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeOutInSeconds) {
 
         WebElement element = waitForElementPresent(by, error_message, timeOutInSeconds);

@@ -5,11 +5,9 @@ import io.appium.java_client.android.AndroidDriver;
 import junit.framework.TestCase;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.net.URL;
 
 // ----- Testcase - JUnit class
-
 public class CoreTestCase extends TestCase {
 
     protected AppiumDriver driver;
@@ -17,6 +15,7 @@ public class CoreTestCase extends TestCase {
 
     @Override
     protected void setUp() throws Exception {
+
         super.setUp();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
@@ -28,8 +27,10 @@ public class CoreTestCase extends TestCase {
         capabilities.setCapability("app", "/home/anya/AppiumAutomation/apks/org.wikipedia.apk");
         driver = new AndroidDriver(new URL(AppiumURL), capabilities);
     }
+
     @Override
     protected void tearDown() throws Exception{
+
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.quit();
         super.tearDown();
