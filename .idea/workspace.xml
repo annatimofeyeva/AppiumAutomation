@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added">
-      <change beforePath="$PROJECT_DIR$/src/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" afterDir="false" />
-    </list>
+    <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +14,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="14402">
+              <caret line="758" selection-start-line="758" selection-end-line="758" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="742">
+              <caret line="157" selection-start-line="157" selection-end-line="157" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#476#477#0" expanded="true" />
@@ -45,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="570">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,8 +73,8 @@
         <option value="$PROJECT_DIR$/src/ApiDemosClass.java" />
         <option value="$PROJECT_DIR$/src/AppiumServerJava.java" />
         <option value="$PROJECT_DIR$/src/TestClass.java" />
-        <option value="$PROJECT_DIR$/src/WikiTestClass.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
+        <option value="$PROJECT_DIR$/src/WikiTestClass.java" />
         <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
       </list>
     </option>
@@ -138,7 +135,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543738840812" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543739696097" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -289,7 +286,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="254" y="194" width="2200" height="1341" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992224" visible="true" weight="0.16945218" />
       <window_info id="Structure" order="1" sideWeight="0.5007776" side_tool="true" weight="0.17402206" />
@@ -365,8 +361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="14402">
+          <caret line="758" selection-start-line="758" selection-end-line="758" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -375,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="742">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#476#477#0" expanded="true" />
@@ -389,8 +385,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="570">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
