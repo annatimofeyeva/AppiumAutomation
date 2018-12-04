@@ -1,5 +1,6 @@
 import lib.CoreTestCase;
 import lib.ui.MainPageObject;
+import lib.ui.SearchPageObject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -17,27 +18,18 @@ public class WikiTestClass extends CoreTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 //  -----testSearch name is for the JUnit; All test need to start with "test". JUnit is now able to see this test and start it
+
     @Test
     public void testSearch() {
 
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find element to init search",
-                5
-        );
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
 
-        MainPageObject.waitForElementAndSendKeys(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Java",
-                "Cannot find search input",
-                5
-        );
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Java");
+        searchPageObject.waitForSearchResult("Object-oriented programming language");
 
-        MainPageObject.waitForElementPresent(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
-                "Cannot find 'Island of Indonesia' topic searching by Java",
-                15
-        );
     }
+
 //  ----print "Java" in Wiki search field and delete request line
     @Test
     public void testCancelSearch() {
