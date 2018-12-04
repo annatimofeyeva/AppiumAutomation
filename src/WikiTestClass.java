@@ -36,7 +36,6 @@ public class WikiTestClass extends CoreTestCase {
         SearchPageObject searchPageObject = new SearchPageObject(driver);
 
         searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine("Java");
         searchPageObject.waitForCancelButtonToAppear();
         searchPageObject.clickCancelSearch();
         searchPageObject.waitForCancelButtonToDisappear();
