@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04235a6-58e1-4e9b-8439-86f3f3ff87f7" name="Default Changelist" comment=".gitignore and README.md added">
+      <change afterPath="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WikiTestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WikiTestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +16,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+            <state relative-caret-position="2698">
+              <caret line="142" column="83" lean-forward="true" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="53" column="108" selection-start-line="53" selection-start-column="108" selection-end-line="53" selection-end-column="108" />
+            <state relative-caret-position="818">
+              <caret line="73" column="90" selection-start-line="73" selection-start-column="90" selection-end-line="73" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,6 +106,7 @@
         <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" />
         <option value="$PROJECT_DIR$/src/WikiTestClass.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" />
       </list>
     </option>
   </component>
@@ -157,7 +173,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543895676468" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543972269863" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -187,7 +203,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WikiTestClass.testCancelSearch">
+  <component name="RunManager" selected="JUnit.WikiTestClass.testCompareArticleTitle">
     <configuration name="WikiTestClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
@@ -206,21 +222,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WikiTestClass.testCheckArticleTitlePresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WikiTestClass.testCompareArticleTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
-      <option name="METHOD_NAME" value="testCheckArticleTitlePresent" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
-      <option name="METHOD_NAME" value="testSaveTwoArticlesAndThenDeleteOneArticle" />
+      <option name="METHOD_NAME" value="testCompareArticleTitle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -236,20 +242,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WikiTestClass.testSwipeArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WikiTestClass" />
+      <option name="METHOD_NAME" value="testSwipeArticle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" />
       <item itemvalue="JUnit.WikiTestClass.testSearch" />
       <item itemvalue="JUnit.WikiTestClass" />
-      <item itemvalue="JUnit.WikiTestClass.testCheckArticleTitlePresent" />
       <item itemvalue="JUnit.WikiTestClass.testCancelSearch" />
+      <item itemvalue="JUnit.WikiTestClass.testCompareArticleTitle" />
+      <item itemvalue="JUnit.WikiTestClass.testSwipeArticle" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WikiTestClass.testCompareArticleTitle" />
+        <item itemvalue="JUnit.WikiTestClass.testSwipeArticle" />
         <item itemvalue="JUnit.WikiTestClass.testCancelSearch" />
         <item itemvalue="JUnit.WikiTestClass.testSearch" />
         <item itemvalue="JUnit.WikiTestClass" />
-        <item itemvalue="JUnit.WikiTestClass.testSaveTwoArticlesAndThenDeleteOneArticle" />
-        <item itemvalue="JUnit.WikiTestClass.testCheckArticleTitlePresent" />
       </list>
     </recent_temporary>
   </component>
@@ -275,9 +291,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WikiTestClass_testCheckArticleTitlePresent - 2018.12.01 at 23h 04m 53s.xml">
-      <configuration name="WikiTestClass.testCheckArticleTitlePresent" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WikiTestClass_testCheckArticleTitlePresent - 2018.12.01 at 23h 06m 46s.xml">
       <configuration name="WikiTestClass.testCheckArticleTitlePresent" configurationId="JUnit" />
     </history-entry>
@@ -305,6 +318,9 @@
     <history-entry file="WikiTestClass_testCancelSearch - 2018.12.03 at 19h 55m 02s.xml">
       <configuration name="WikiTestClass.testCancelSearch" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WikiTestClass_testCompareArticleTitle - 2018.12.04 at 16h 47m 42s.xml">
+      <configuration name="WikiTestClass.testCompareArticleTitle" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="254" y="194" width="2200" height="1341" extended-state="0" />
@@ -319,13 +335,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8481894" visible="true" weight="0.14744645" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.84772515" visible="true" weight="0.14744645" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4795729" weight="0.11779242" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.15181059" side_tool="true" visible="true" weight="0.14744645" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.47910863" weight="0.11779242" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.15227483" side_tool="true" visible="true" weight="0.14744645" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49071494" weight="0.32893652" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -408,8 +424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="53" column="108" selection-start-line="53" selection-start-column="108" selection-end-line="53" selection-end-column="108" />
+        <state relative-caret-position="818">
+          <caret line="73" column="90" selection-start-line="73" selection-start-column="90" selection-end-line="73" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -418,8 +434,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WikiTestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+        <state relative-caret-position="2698">
+          <caret line="142" column="83" lean-forward="true" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

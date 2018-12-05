@@ -1,4 +1,5 @@
 import lib.CoreTestCase;
+import lib.ui.ArticlePageObject;
 import lib.ui.MainPageObject;
 import lib.ui.SearchPageObject;
 import org.junit.Assert;
@@ -45,39 +46,39 @@ public class WikiTestClass extends CoreTestCase {
     @Test
     public void testCompareArticleTitle() {
 
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find element to init search",
-                5
-        );
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
 
-        String search_line = "Java";
-        MainPageObject.waitForElementAndSendKeys(
-                By.id("org.wikipedia:id/search_src_text"),
-                search_line,
-                "Cannot find search input",
-                5
-        );
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Java");
+        searchPageObject.clickByArticleBySubstring("Object-oriented programming language");
 
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Object-oriented programming language')]"),
-                "Cannot find 'Object-oriented programming' topic",
-                5
-        );
-        WebElement title_element = MainPageObject.waitForElementPresent(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find article title",
-                15
-        );
+        ArticlePageObject articlePageObject = new ArticlePageObject(driver);
 
-        String article_title = title_element.getAttribute("text");
+        String article_title = articlePageObject.getArticleTitle();
+
         Assert.assertEquals(
                 "We see unexpected title",
                 "Java (programming language)",
                 article_title
         );
     }
-//  ------verification of prompt text in search filed
+
+    @Test
+    public void testSwipeArticle() {
+
+
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Appium");
+        searchPageObject.clickByArticleBySubstring("Appium");
+
+        ArticlePageObject articlePageObject = new ArticlePageObject(driver);
+        articlePageObject.waitForTitleElement();
+        articlePageObject.swipeToFooter();
+    }
+
+
     @Test
     public void testPlaceholderSearchPresent() {
         //verification that our prompt text in search inputField equals the value of "text" attribute in XML
@@ -135,108 +136,7 @@ public class WikiTestClass extends CoreTestCase {
                 15
         );
     }
-//  -----just for practice: different assertions:
 
-//        Assert.assertTrue("Articles still present after deletion", amount_after_deletion < 1);
-//        /* verification of presence of the element with "text" attribute  =  "Search and read the free encyclopedia in your language" -
-//         so we can mark new search page
-//        */
-//        WebElement screen_element = waitForElementPresent(
-//                By.id("org.wikipedia:id/search_empty_message"),
-//                "Cannot find search message",
-//                15
-//        );
-//        String search_message_text_in_the_middle_of_the_page = screen_element.getAttribute("text");
-//        System.out.println(search_message_text_in_the_middle_of_the_page);
-//
-//        Assert.assertEquals(
-//                "Unexpected search message displays",
-//                "Search and read the free encyclopedia in your language",
-//                search_message_text_in_the_middle_of_the_page
-//        );
-//        //verification of prompt "Search…" text
-//        WebElement search_input_field_element = waitForElementPresent(
-//                By.id("org.wikipedia:id/search_src_text"),
-//                " Cannot find Search input field",
-//                15
-//        );
-//        String search_prompt_text = search_input_field_element.getAttribute("text");
-//        System.out.println(search_prompt_text);
-//        Assert.assertEquals(
-//                "Unexpected prompt text in search input field ",
-//                "Search…",
-//                search_prompt_text
-//        );
-//        // starting new search with value "Java" and counting search result
-//        waitForElementAndSendKeys(
-//                By.id("org.wikipedia:id/search_src_text"),
-//                "Java",
-//                "Cannot find search input",
-//                10
-//        );
-//        String input_text_string = search_input_field_element.getAttribute("text");
-//        System.out.println(input_text_string);
-//
-//        Assert.assertEquals("Java", input_text_string
-//        );
-//    ------Test mostly always failed - so not in all article's titles presents "Java"
-//    @Test
-//    public void testSearchForMatchingInArticlesHeaders() {
-//       waitForElementAndClick(
-//                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-//                "Cannot find element to init search",
-//                5
-//        );
-//        waitForElementAndSendKeys(
-//                By.id("org.wikipedia:id/search_src_text"),
-//                "Java",
-//                "Cannot find search input",
-//                5
-//        );
-//        WebElement search_input = waitForElementPresent(
-//                By.id("org.wikipedia:id/search_src_text"),
-//                "Search input field not found",
-//                15
-//        );
-//        String search_text_value = search_input.getAttribute("text").toLowerCase();
-//        System.out.println(search_text_value);
-//
-//        boolean result = isArticleHeaderLineContainsSearchText(By.id("org.wikipedia:id/page_list_item_container"),
-//                search_text_value,
-//                "Does not found matches in article headers",
-//                15);
-//        Assert.assertTrue("Some searched articles does not have matching between header text and searched text value", result);
-//    }
-//    ---------swiping
-    @Test
-    public void testSwipeArticle() {
-
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find element to init search",
-                5
-        );
-
-        MainPageObject.waitForElementAndSendKeys(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Appium",
-                "Cannot find search input",
-                5
-        );
-
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//android.widget.TextView[@text='Appium']"),
-                "Cannot find Appium in Search",
-                5
-        );
-        //long time swipe
-        //swipeUP(2000);
-        MainPageObject.swipeUpToFindElement(
-                By.xpath("//android.widget.TextView[@text = 'View page in browser']"),
-                "Cannot find the end of the article" ,
-                20
-        );
-    }
 //  -------- save article to list, then delete from list by swipe, then verification - waitForElementNotPresent()
     @Test
     public void testSaveFirstArticleToMyListAndDeleteBySwipe() {
