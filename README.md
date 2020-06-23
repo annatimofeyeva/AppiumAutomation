@@ -1,4 +1,4 @@
-# Wikipedia mobile app automation scripts using Appium, Java and Inteliij Idea 
+# Wikipedia mobile app automation scripts using Appium, Java and IntelliJ Idea 
 
 ## Prerequisites
 
